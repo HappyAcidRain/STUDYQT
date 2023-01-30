@@ -15,7 +15,7 @@ class ConfPart(QtWidgets.QMainWindow, setings.Ui_MainWindow):
         self.btn_save.clicked.connect(self.save_data)
         self.btn_save.setText("Сохранить!")
 
-        #пути в полях (placeholder'ы)
+        # пути в полях (placeholder'ы)
 
         # подключаемся к БД
         connect = sqlite3.connect("OLD_APP\conf.db")
