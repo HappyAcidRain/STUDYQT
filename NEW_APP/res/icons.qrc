@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="mainIcons">
+    <file>mainIcon-480.png</file>
+    <file>sunny-500.png</file>
+  </qresource>
+</RCC>
