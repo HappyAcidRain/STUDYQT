@@ -1,34 +1,51 @@
 import sys
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication
+from PyQt6 import QtWidgets
+from PyQt6.QtWidgets import QDialog, QApplication
 
+# окошки
 import maxVid
 import minVid
 
 
-class MaxVid(QtWidgets.QMainWindow, maxVid.Ui_MainWindow):
+# большое окно
+class MaxVid(QtWidgets.QMainWindow, maxVid.Ui_MainWindow, QDialog):
     def __init__(self):
-        super().__init__()
+        super(MaxVid, self).__init__()
         self.setupUi(self)
 
-    def main_window(self):
-        self.btn_slim.clicked.connect(self.nextVid())
+        # кнопка смены вида
+        self.btn_slim.clicked.connect(self.nextVid)
 
+    # возврат на маленькое окно
     def nextVid(self):
         screen2 = MinVid()
+        w.setFixedHeight(150)
+        w.setFixedWidth(338)
         w.addWidget(screen2)
         w.setCurrentIndex(w.currentIndex()+1)
 
 
-class MinVid(QtWidgets.QMainWindow, minVid.Ui_MainWindow):
+# маленькое окно
+class MinVid(QtWidgets.QMainWindow, minVid.Ui_MainWindow, QDialog):
     def __init__(self):
-        super().__init__()
+        super(MinVid, self).__init__()
         self.setupUi(self)
+
+        # кнопка смены вида
+        self.btn_max.clicked.connect(self.pervPage)
+
+    # возврат на большое окно
+    def pervPage(self):
+        w.setFixedHeight(260)
+        w.setFixedWidth(338)
+        w.setCurrentIndex(w.currentIndex() - 1)
 
 
 if __name__ == '__main__':
-    app = QtWidgets.QApplication(sys.argv)
-    w = MaxVid()
+    app = QApplication(sys.argv)
+    mainWindow = MaxVid()
+    w = QtWidgets.QStackedWidget()
+    w.addWidget(mainWindow)
+
     w.show()
-    w.main_window()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

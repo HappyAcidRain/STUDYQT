@@ -1,6 +1,6 @@
 import sys
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication
+from PyQt6 import QtWidgets
+from PyQt6.QtWidgets import QDialog, QApplication
 import pageOne
 import pageTwo
 
@@ -29,7 +29,6 @@ class Screen2(QtWidgets.QMainWindow, pageTwo.Ui_MainWindow, QDialog):
         w.setCurrentIndex(w.currentIndex()-1)
 
 
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     mainWindow = MainWindow()
@@ -40,4 +39,5 @@ if __name__ == '__main__':
     w.setFixedWidth(186)
 
     w.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
+    

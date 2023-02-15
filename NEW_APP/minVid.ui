@@ -125,8 +125,6 @@ QFrame {
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="res/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

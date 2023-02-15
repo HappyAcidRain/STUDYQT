@@ -153,24 +153,11 @@ QFrame {
      </property>
     </widget>
    </widget>
-   <widget class="QStackedWidget" name="stackedWidget">
-    <property name="geometry">
-     <rect>
-      <x>-30</x>
-      <y>109</y>
-      <width>321</width>
-      <height>181</height>
-     </rect>
-    </property>
-    <widget class="QWidget" name="page"/>
-    <widget class="QWidget" name="page_2"/>
-   </widget>
    <zorder>frame</zorder>
    <zorder>le_city</zorder>
    <zorder>btn_slim</zorder>
    <zorder>lbl_weather</zorder>
    <zorder>lbl_temp</zorder>
-   <zorder>stackedWidget</zorder>
   </widget>
  </widget>
  <resources/>
