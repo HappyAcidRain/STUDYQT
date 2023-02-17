@@ -31,11 +31,5 @@ def getWeather(city):
     temp = int(temp)
     temp = (temp - 32) // 1.8
 
-    # printing all data
-    print("Temperature is", temp)
-    print("Time: ", time)
-    print("Sky Description: ", sky)
-    print(other_data)
-
     return [temp, sky, time, other_data]
 
