@@ -1,3 +1,4 @@
+# база
 import sys
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QDialog, QApplication
@@ -54,7 +55,7 @@ class MinVid(QtWidgets.QMainWindow, minVid.Ui_MainWindow, QDialog):
         weather = getWeather(city)
 
         # выводим погоду
-        self.lbl_temp_2.setText(str(int(weather[0])))
+        self.lbl_temp_2.setText(str(int(weather[0])) + " C")
 
     # возврат на большое окно
     def pervPage(self):
