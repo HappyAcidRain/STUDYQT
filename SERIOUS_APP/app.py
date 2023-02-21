@@ -64,6 +64,8 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         def rum_calc(x):
             if x == 1:
                 return 0
+                
+            # TODO optimise thesee "elif" substance 
 
             elif x == 2:
                 return 10
