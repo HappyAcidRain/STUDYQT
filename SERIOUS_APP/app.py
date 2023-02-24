@@ -17,7 +17,7 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         super(MainWin, self).__init__()
         self.setupUi(self)
 
-        self.btn_commit.clicked.connect(lambda: self.draw())
+        self.btn_commit.clicked.connect(lambda: self.testDate())
 
     def draw(self):
 
@@ -34,7 +34,7 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         gnt.set_xlabel('Даты')
         gnt.set_ylabel('Номера')
 
-        # yt hf,jnftn
+        # не работает
         # changing diamentionshe
         # gnt.set_figwidth(52)
         # gnt.set_figheight(20)
@@ -62,34 +62,8 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         gnt.grid(True)
 
         def rum_calc(x):
-            if x == 1:
-                return 0
-                
-            # TODO optimise thesee "elif" substance 
-
-            elif x == 2:
-                return 10
-
-            elif x == 3:
-                return 20
-
-            elif x == 4:
-                return 30
-
-            elif x == 5:
-                return 40
-
-            elif x == 6:
-                return 50
-
-            elif x == 7:
-                return 60
-
-            elif x == 8:
-                return 70
-
-            else:
-                return "Error, this room doesn't exist"
+            a = x * 10 - 10
+            return a
 
         def ins_cust(start_time, end_time, room, color):
 
@@ -109,6 +83,11 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
 
         pixmap = QPixmap('gant.png')
         self.lbl_view.setPixmap(pixmap)
+
+    def testDate(self):
+
+        date = self.de_date.date()
+        print(date)
 
 
 if __name__ == '__main__':
