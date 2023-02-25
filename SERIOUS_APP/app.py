@@ -41,7 +41,7 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         gnt.set_xlabel('Даты')
         gnt.set_ylabel('Номера')
 
-        # yt hf,jnftn
+        # не работает
         # changing diamentionshe
         # gnt.set_figwidth(52)
         # gnt.set_figheight(20)
@@ -90,6 +90,11 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
 
         pixmap = QPixmap('gant.png')
         self.lbl_view.setPixmap(pixmap)
+
+    def testDate(self):
+
+        date = self.de_date.date()
+        print(date)
 
 
 if __name__ == '__main__':
