@@ -22,6 +22,7 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         self.movie = QMovie("roblox-baller.gif")
         self.lbl_view.setMovie(self.movie)
 
+    # animation gif start
     def startGifBaller(self):
         self.movie.start()
 
