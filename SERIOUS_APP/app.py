@@ -23,7 +23,7 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         self.lbl_view.setMovie(self.movie)
 
     # animation gif start
-    def startGifBaller(self):
+    def startGif(self):
         self.movie.start()
 
 
