@@ -17,7 +17,14 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         super(MainWin, self).__init__()
         self.setupUi(self)
 
-        self.btn_commit.clicked.connect(lambda: self.draw())
+        self.btn_commit.clicked.connect(lambda: self. startGif())
+
+        self.movie = QMovie("roblox-baller.gif")
+        self.lbl_view.setMovie(self.movie)
+
+    def startGifBaller(self):
+        self.movie.start()
+
 
     def draw(self):
 
@@ -62,34 +69,8 @@ class MainWin(QtWidgets.QMainWindow, win.Ui_MainWindow, QDialog):
         gnt.grid(True)
 
         def rum_calc(x):
-            if x == 1:
-                return 0
-                
-            # TODO optimise thesee "elif" substance 
-
-            elif x == 2:
-                return 10
-
-            elif x == 3:
-                return 20
-
-            elif x == 4:
-                return 30
-
-            elif x == 5:
-                return 40
-
-            elif x == 6:
-                return 50
-
-            elif x == 7:
-                return 60
-
-            elif x == 8:
-                return 70
-
-            else:
-                return "Error, this room doesn't exist"
+            а = x * 10 - 10
+            return а
 
         def ins_cust(start_time, end_time, room, color):
 
