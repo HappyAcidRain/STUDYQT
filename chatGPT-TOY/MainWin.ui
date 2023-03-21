@@ -2,42 +2,74 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>451</width>
-    <height>600</height>
+    <height>329</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>451</width>
+    <height>329</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>451</width>
+    <height>329</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Segoe UI Light</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
-	color: white;
-	background-color: #494949;
+	color: #F6F6F6;
+	background-color: #6B6B6B;
 }
 
-QLable {
-	border: 2px solid black ;
+QLabel {
+	color: #F6F6F6;
+	background-color: #7C7C7C;
+	border: 1px solid #535EDF;
 	border-radius: 15px;
 }
 
-QLineEdit{
-	border: 2px solid black ;
+QTextEdit{
+	color: #F6F6F6;
+	background-color: #7C7C7C;
+	border: 1px solid #2C65A2;
 	border-radius: 10px;
 }
 
 QPushButton {
-	background-color: #DF654A;
-	border: 2px solid black ;
+	color: black;
+	background-color: #4487CF;
+	border: 1px solid #2C65A2;
 	border-radius: 10px;
 }
 
-QPushButton: hover {
-	background-color: #E27861;
-	border: 2px solid black ;
+QPushButton:hover {
+	color: black;
+	background-color: #4C9CF2;
+	border: 1px solid #2C65A2;
 	border-radius: 10px;
 }</string>
   </property>
@@ -46,9 +78,9 @@ QPushButton: hover {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>480</y>
+      <y>270</y>
       <width>341</width>
-      <height>111</height>
+      <height>51</height>
      </rect>
     </property>
    </widget>
@@ -58,19 +90,19 @@ QPushButton: hover {
       <x>10</x>
       <y>10</y>
       <width>431</width>
-      <height>461</height>
+      <height>251</height>
      </rect>
     </property>
     <property name="text">
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btn_getAnswer">
     <property name="geometry">
      <rect>
-      <x>354</x>
-      <y>510</y>
-      <width>91</width>
+      <x>360</x>
+      <y>270</y>
+      <width>81</width>
       <height>51</height>
      </rect>
     </property>
