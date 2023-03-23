@@ -1,7 +1,7 @@
 import openai
 
 
-def fuckGpt(prompt):
+def askGpt(prompt):
 
     openai.api_key = "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"
 
@@ -9,7 +9,7 @@ def fuckGpt(prompt):
     model_engine = "text-davinci-003"
 
     # задаем макс кол-во слов
-    max_tokens = 128
+    max_tokens = 99999999
 
     # генерируем ответ
     completion = openai.Completion.create(

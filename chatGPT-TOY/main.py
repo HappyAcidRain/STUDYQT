@@ -1,7 +1,7 @@
 # база
 import sys
 from PyQt6 import QtWidgets
-from PyQt6.QtWidgets import QDialog, QApplication
+from PyQt6.QtWidgets import QDialog, QApplication, QGraphicsDropShadowEffect
 
 # окно
 import MainWin
@@ -16,18 +16,23 @@ class MainWindow(QtWidgets.QMainWindow, MainWin.Ui_MainWindow, QDialog):
         super(MainWindow, self).__init__()
         self.setupUi(self)
 
+        # настройки окна
+        self.setWindowTitle("ChatieThing")
+        shadow = QGraphicsDropShadowEffect()
+        shadow.setBlurRadius(15)
+        shadow.setOffset(2)
+        self.btn_commit.setGraphicsEffect(shadow)
+
         # кнопушка
-        self.btn_getAnswer.clicked.connect(self.GetDaFuckingAnswer)
+        self.btn_commit.clicked.connect(self.getAnswer)
 
-    def GetDaFuckingAnswer(self):
-
+    def getAnswer(self):
         question = str(self.te_userEnter.toPlainText())
-        answer = str(G.fuckGpt(question))
+        answer = str(G.askGpt(question))
 
-        self.le_gptAnswer.setText(answer)
+        self.te_gptAnswer.setText(answer)
 
 
-# СТАРТУЕММММ!!!
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     mainWindow = MainWindow()

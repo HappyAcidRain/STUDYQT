@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>453</height>
+    <height>447</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,14 +21,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>0</height>
+    <width>300</width>
+    <height>447</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>99999</width>
-    <height>99999</height>
+    <width>300</width>
+    <height>447</height>
    </size>
   </property>
   <property name="font">
@@ -83,6 +83,9 @@ QPushButton:hover {
       <height>51</height>
      </rect>
     </property>
+    <property name="cursorWidth">
+     <number>1</number>
+    </property>
     <property name="placeholderText">
      <string>Введите вопрос...</string>
     </property>
@@ -104,17 +107,29 @@ QPushButton:hover {
       <normaloff>assets/icons8-paper-plane-100.png</normaloff>assets/icons8-paper-plane-100.png</iconset>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="tb_gptAnswer">
+   <widget class="QTextEdit" name="te_gptAnswer">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>281</width>
-      <height>371</height>
+      <width>280</width>
+      <height>370</height>
      </rect>
     </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="overwriteMode">
+     <bool>true</bool>
+    </property>
+    <property name="cursorWidth">
+     <number>0</number>
+    </property>
     <property name="placeholderText">
-     <string>Здесь будет ответ...</string>
+     <string>Здесь будет овтет</string>
     </property>
    </widget>
   </widget>
