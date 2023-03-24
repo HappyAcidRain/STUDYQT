@@ -7,6 +7,8 @@ from PyQt6.QtWidgets import QDialog, QApplication, QGraphicsDropShadowEffect
 # окно
 import MainWin
 
+# самый безполезныый комент
+
 # чат гпт даёт ответы
 import GPT as G
 
