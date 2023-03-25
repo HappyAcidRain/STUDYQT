@@ -10,7 +10,7 @@ def askGpt(prompt):
         model="text-davinci-003",
         prompt= str(prompt),
         max_tokens=2048,
-        temperature=0.5
+        temperature=0.3
     )
 
     # выводим ответ

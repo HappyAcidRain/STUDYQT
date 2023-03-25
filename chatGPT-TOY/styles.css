@@ -30,3 +30,10 @@ QPushButton:hover {
 	border: 1px solid #2C65A2;
 	border-radius: 10px;
 }
+
+QProgressBar {
+	color: #F6F6F6;
+	background-color: #7C7C7C;
+	border: 1px solid #2C65A2;
+	border-radius: 10px;
+}

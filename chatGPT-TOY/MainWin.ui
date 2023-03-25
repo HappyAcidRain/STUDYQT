@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>447</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -27,8 +27,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>300</width>
-    <height>447</height>
+    <width>999</width>
+    <height>9999</height>
    </size>
   </property>
   <property name="font">
@@ -69,6 +69,13 @@ QPushButton {
 QPushButton:hover {
 	color: black;
 	background-color: #4C9CF2;
+	border: 1px solid #2C65A2;
+	border-radius: 10px;
+}
+
+QProgressBar {
+	color: #F6F6F6;
+	background-color: #7C7C7C;
 	border: 1px solid #2C65A2;
 	border-radius: 10px;
 }</string>
@@ -130,6 +137,31 @@ QPushButton:hover {
     </property>
     <property name="placeholderText">
      <string>Здесь будет овтет</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="pb_progress">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>450</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>2</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>

@@ -13,14 +13,14 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(300, 447)
+        MainWindow.resize(300, 478)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(300, 447))
-        MainWindow.setMaximumSize(QtCore.QSize(300, 447))
+        MainWindow.setMaximumSize(QtCore.QSize(999, 9999))
         font = QtGui.QFont()
         font.setFamily("Segoe UI Light")
         MainWindow.setFont(font)
@@ -55,6 +55,13 @@ class Ui_MainWindow(object):
 "    background-color: #4C9CF2;\n"
 "    border: 1px solid #2C65A2;\n"
 "    border-radius: 10px;\n"
+"}\n"
+"\n"
+"QProgressBar {\n"
+"    color: #F6F6F6;\n"
+"    background-color: #7C7C7C;\n"
+"    border: 1px solid #2C65A2;\n"
+"    border-radius: 10px;\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -76,6 +83,14 @@ class Ui_MainWindow(object):
         self.te_gptAnswer.setOverwriteMode(True)
         self.te_gptAnswer.setCursorWidth(0)
         self.te_gptAnswer.setObjectName("te_gptAnswer")
+        self.pb_progress = QtWidgets.QProgressBar(parent=self.centralwidget)
+        self.pb_progress.setGeometry(QtCore.QRect(10, 450, 281, 21))
+        self.pb_progress.setMaximum(2)
+        self.pb_progress.setProperty("value", 0)
+        self.pb_progress.setTextVisible(False)
+        self.pb_progress.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.pb_progress.setInvertedAppearance(False)
+        self.pb_progress.setObjectName("pb_progress")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)

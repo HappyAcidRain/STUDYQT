@@ -6,8 +6,12 @@ from PyQt6.QtWidgets import QDialog, QApplication, QGraphicsDropShadowEffect
 # окно
 import MainWin
 
-# чат гпт даёт ответы
-import GPT as G
+# чат GPT
+import openai
+openai.api_key = "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"
+
+# иное 
+import time
 
 
 class MainWindow(QtWidgets.QMainWindow, MainWin.Ui_MainWindow, QDialog):
@@ -21,7 +25,7 @@ class MainWindow(QtWidgets.QMainWindow, MainWin.Ui_MainWindow, QDialog):
         history_ = []
 
         # основные настройки окна
-        # self.QMainWindow.setWindowTitle("ChatieThing")
+        self.setWindowTitle("ChatieThing")
 
         # косметические настрйоки окна 
         shadow = QGraphicsDropShadowEffect()
@@ -30,29 +34,41 @@ class MainWindow(QtWidgets.QMainWindow, MainWin.Ui_MainWindow, QDialog):
         self.btn_commit.setGraphicsEffect(shadow)
         self.te_gptAnswer.setGraphicsEffect(shadow)
         self.te_userEnter.setGraphicsEffect(shadow)
+        self.pb_progress.setGraphicsEffect(shadow)
 
-        # нажатие кнопушки и Enter 
+        # кнопушка 
         self.btn_commit.clicked.connect(self.get_answer)
         
 
     def get_answer(self):
-        user_message = []
-        bot_answer = []
-        history_ = []
 
-        question = str(self.te_userEnter.toPlainText())
-        answer = str(G.askGpt(question))
+        # обновляем прогрессБар
+        self.pb_progress.setRange(0,2)
+        self.pb_progress.setValue(1)
 
-        user_message.append(question)
-        bot_answer.append(answer)
+        # генерируем ответ
+        completion = openai.Completion.create(
+            model="text-davinci-003",
+            prompt= str(self.te_userEnter.toPlainText()),
+            max_tokens=2048,
+            temperature=0.3
+        )
 
-        for i in user_message and bot_answer:
-            history_.append("Вы:" + user_message[i] + "чат-GPT:" + bot_answer[i] )
-            self.te_gptAnswer.setText(history_)
+        # еще раз обновляем прогрессБар
+        self.pb_progress.setValue(2)
+        self.pb_progress.reset()
+
+        # выводим ответ 
+        self.te_gptAnswer.setText(str(completion.choices[0].text))
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     m = MainWindow()
+
+    # фиксируем размеры окна
+    m.setFixedWidth(300)
+    m.setFixedHeight(480)
+
     m.show()
     sys.exit(app.exec())
