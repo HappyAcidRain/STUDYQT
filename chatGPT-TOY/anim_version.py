@@ -7,8 +7,6 @@ from PyQt6.QtWidgets import QDialog, QApplication, QGraphicsDropShadowEffect
 # окно
 import MainWin
 
-# самый безполезныый комент
-
 # чат гпт даёт ответы
 import GPT as G
 
@@ -52,8 +50,6 @@ class MainWindow(QtWidgets.QMainWindow, MainWin.Ui_MainWindow, QDialog):
         self.anim_te.setEndValue(QPoint(10, 460))
         self.anim_te.setDuration(900)
         self.anim_te.start()
-
-
 
 
 if __name__ == '__main__':
